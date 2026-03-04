@@ -1,169 +1,67 @@
-# Walmart_Sales
-Walmart Sales Analysis
+# Walmart Data Analysis: End-to-End SQL + Python Project P-9
+
 ## Project Overview
 
-This project is an end-to-end data analysis solution developed to extract key business insights from Walmart sales data. I used Python for data processing and analysis, SQL for advanced querying, and structured analytical methods to solve business-driven questions. The project demonstrates practical skills in data cleaning, feature engineering, SQL analysis, and data pipeline creation.
+This project is an end-to-end data analysis solution designed to extract critical business insights from Walmart sales data. We utilize Python for data processing and analysis, SQL for advanced querying, and structured problem-solving techniques to solve key business questions.
 
-# Project Steps
-## 1. Environment Setup
+---
 
-Tools Used: Visual Studio Code (VS Code), Python, SQL (PostgreSQL)
+## Project Steps
 
-I set up a structured workspace in VS Code and organized the project directories to ensure smooth development and efficient data handling.
+### 1. Environment Setup
+   - **Tools Used**: Visual Studio Code (VS Code), Python, SQL (PostgreSQL)
+   - **Goal**: To create a structured workspace within VS Code and organize project folders for smooth development and data handling.
 
-## 2. Data Acquisition
+### 2. Downloaded Walmart Sales Data
+   - **Data Source**: Downloaded the dataset from Kaggle.
+   
+### 3. Installed Required Libraries and Loaded Data
+   - **Libraries**: Installed necessary Python libraries using:
+     ```bash
+     pip install pandas numpy sqlalchemy psycopg2
+     ```
+   - **Loading Data**: Read the data into a Pandas DataFrame for initial analysis and transformations.
 
-Data Source: Kaggle – Walmart Sales Dataset
+### 4. Explored the Data
+   - **Goal**: I conducted an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
+   - **Analysis**: Used functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
 
-Downloaded the Walmart sales dataset using the Kaggle API and stored the data in the data/ directory for easy access and reference.
+### 6. Data Cleaning
+   - **Remove Duplicates**: I identified and removed duplicate entries to avoid skewed results.
+   - **Handle Missing Values**: Dropped rows or columns with missing values if they are insignificant; filled values where essential.
+   - **Fix Data Types**: Ensured all columns have consistent data types (e.g., dates as `datetime`, prices as `float`).
+   - **Currency Formatting**: Used `.replace()` to handle and format currency values for analysis.
+   - **Validation**: Checked for any remaining inconsistencies and verify the cleaned data.
 
-## 3. Installing Libraries and Loading Data
+### 7. Feature Engineering
+   - **Create New Columns**: Calculated the `Total Amount` for each transaction by multiplying `unit_price` by `quantity` and adding this as a new column.
+   - **Enhanced Dataset**: Adding this calculated field will streamline further SQL analysis and aggregation tasks.
 
-Installed the required Python libraries using:
+### 8. Loaded Data into PostgreSQL
+   - **Set Up Connections**: Connected to PostgreSQL using `sqlalchemy` and load the cleaned data into each database.
+   - **Table Creation**: Set up tables in PostgreSQL using Python SQLAlchemy to automate table creation and data insertion.
+   - **Verification**: Ran initial SQL queries to confirm that the data has been loaded accurately.
 
-pip install pandas numpy sqlalchemy psycopg2
+### 9. SQL Analysis: Complex Queries and Business Problem Solving
+   - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
+     - Revenue trends across branches and categories.
+     - Identifying best-selling product categories.
+     - Sales performance by time, city, and payment method.
+     - Analyzing peak sales periods and customer buying patterns.
+     - Profit margin analysis by branch and category.
+   - **Documentation**: Kept clear notes of each query's objective, approach, and results.
 
-Then loaded the dataset into a Pandas DataFrame for initial exploration and transformation.
+---
 
-## 4. Data Exploration
+## License
 
-Performed exploratory data analysis to understand the dataset structure and identify potential issues.
+This project is licensed under the MIT License. 
 
-Key methods used:
+---
 
-.info() to inspect data types
+## Acknowledgments
 
-.describe() for statistical summaries
+- **Data Source**: Kaggle’s Walmart Sales Dataset
+- **Inspiration**: Walmart’s business case studies on sales and supply chain optimization.
 
-.head() to preview records
-
-This helped in identifying inconsistencies, missing values, and data distribution patterns.
-
-## 5. Data Cleaning
-
-Performed multiple preprocessing steps to ensure data quality:
-
-Removed duplicate records
-
-Handled missing values by dropping or imputing where necessary
-
-Corrected inconsistent data types (e.g., converting dates to datetime)
-
-Cleaned currency formatting using .replace()
-
-Validated the dataset after cleaning to ensure consistency
-
-## 6. Feature Engineering
-
-Created additional features to enhance analytical capabilities.
-
-Example:
-
-Calculated Total Amount per transaction
-
-total_amount = unit_price * quantity
-
-This new column simplified aggregation and SQL-based analysis.
-
-## 7. Loading Data into Databases
-
-Connected Python to PostgreSQL using SQLAlchemy and loaded the cleaned dataset into both databases.
-
-Steps performed:
-
-Established database connections
-
-Automated table creation
-
-Inserted cleaned data into tables
-
-Verified successful data loading using SQL queries
-
-## 8. SQL Analysis
-
-Wrote and executed complex SQL queries to answer business questions such as:
-
-Revenue trends across branches and product categories
-
-Identification of best-selling categories
-
-Sales performance by city, branch, and payment method
-
-Peak sales hours and customer purchasing patterns
-
-Profit margin comparison across branches
-
-Each query was documented with its objective, logic, and findings.
-
-## 9. Project Documentation and Publishing
-
-Documented the entire workflow using Markdown and Jupyter Notebooks and published the project on GitHub including:
-
-README documentation
-
-SQL query scripts
-
-Python notebooks
-
-Project structure and instructions
-
-Requirements
-
-Python: 3.8+
-Database: PostgreSQL
-
-Python Libraries
-
-pandas
-
-numpy
-
-sqlalchemy
-
-psycopg2
-
-Kaggle API key was used for dataset download.
-
-Project Structure
-|-- data/                     # Raw and processed datasets
-|-- sql_queries/              # SQL scripts for analysis
-|-- notebooks/                # Jupyter notebooks for Python analysis
-|-- README.md                 # Project documentation
-|-- requirements.txt          # Python dependencies
-|-- main.py                   # Data loading, cleaning, and processing script
-Results and Insights
-
-Sales Insights
-
-Identified top-performing product categories and branches
-
-Determined the most commonly used payment methods
-
-Profitability Analysis
-
-Analyzed profit margins across branches and product categories
-
-Customer Behavior
-
-Evaluated customer ratings
-
-Identified peak shopping hours and payment preferences
-
-Future Enhancements
-
-Possible extensions include:
-
-Integration with Power BI or Tableau dashboards
-
-Incorporation of additional datasets for deeper analysis
-
-Automation of the data pipeline for scheduled data ingestion and analysis
-
-License
-
-This project is released under the MIT License.
-
-Acknowledgments
-
-Data Source: Kaggle – Walmart Sales Dataset
-Inspiration: Walmart business case studies on sales and supply chain optimization
+---
