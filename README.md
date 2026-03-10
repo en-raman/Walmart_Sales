@@ -12,17 +12,17 @@ This project is an end-to-end data analysis solution designed to extract critica
    - **Tools Used**: Visual Studio Code (VS Code), Python, SQL (PostgreSQL)
    - **Goal**: To create a structured workspace within VS Code and organize project folders for smooth development and data handling.
 
-### 2. Downloaded Walmart Sales Data
+### 2. Download Walmart Sales Data
    - **Data Source**: Downloaded the dataset from Kaggle.
    
-### 3. Installed Required Libraries and Loaded Data
+### 3. Install Required Libraries and Loaded Data
    - **Libraries**: Installed necessary Python libraries using:
      ```bash
      pip install pandas numpy sqlalchemy psycopg2
      ```
    - **Loading Data**: Read the data into a Pandas DataFrame for initial analysis and transformations.
 
-### 4. Explored the Data
+### 4. Explore the Data
    - **Goal**: I conducted an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
    - **Analysis**: Used functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
 
@@ -37,7 +37,7 @@ This project is an end-to-end data analysis solution designed to extract critica
    - **Create New Columns**: Calculated the `Total Amount` for each transaction by multiplying `unit_price` by `quantity` and adding this as a new column.
    - **Enhanced Dataset**: Adding this calculated field will streamline further SQL analysis and aggregation tasks.
 
-### 8. Loaded Data into PostgreSQL
+### 8. Load Data into PostgreSQL
    - **Set Up Connections**: Connected to PostgreSQL using `sqlalchemy` and load the cleaned data into each database.
    - **Table Creation**: Set up tables in PostgreSQL using Python SQLAlchemy to automate table creation and data insertion.
    - **Verification**: Ran initial SQL queries to confirm that the data has been loaded accurately.
